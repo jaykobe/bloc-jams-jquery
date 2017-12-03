@@ -1,6 +1,6 @@
 {
   album.songs.forEach( (song, index) => {
-    song.element = $('  <tr>
+    song.element = $('<tr>
         <td>index</td>
         <td>${index + 1}</td>
         <td>
@@ -17,6 +17,7 @@
 
    song.element.on('click', event => {
      player.playPause(song);
+     $('button#play-pause').attr('playState', player.playState);
    });
 
   $('#song-list').append(song.element);
